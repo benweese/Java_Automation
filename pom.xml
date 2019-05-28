@@ -49,16 +49,6 @@
             <version>4.12</version>
         </dependency>
         <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-core</artifactId>
-            <version>1.9.10</version>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-junit</artifactId>
-            <version>1.9.10</version>
-        </dependency>
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
@@ -68,11 +58,6 @@
             <artifactId>assertj-core</artifactId>
             <version>3.9.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber</artifactId>
-            <version>1.9.5</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -112,27 +97,6 @@
                         <surefire.rerunFailingTestsCount>${surefire.rerunFailingTestsCount}</surefire.rerunFailingTestsCount>
                     </systemProperties>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.serenity-bdd.maven.plugins</groupId>
-                <artifactId>serenity-maven-plugin</artifactId>
-                <version>1.9.9</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.serenity-bdd</groupId>
-                        <artifactId>serenity-core</artifactId>
-                        <version>1.9.10</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>serenity-reports</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>aggregate</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
