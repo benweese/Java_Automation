@@ -4,17 +4,17 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.PendingException;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 
 
 public class complicatedPage {
 
     private WebDriver driver;
-    private complicatedPOM comPOM = new complicatedPOM();
+    private complicatedPOM comPOM;
     private String url;
     private setup setup = new setup();
 
@@ -23,6 +23,7 @@ public class complicatedPage {
     public void beforeSenario(){
         setup.setDriver();
         driver = setup.getDriver();
+        comPOM  = new complicatedPOM(driver);
         setup.setUrl("complicated-page");
         url = setup.getUrl();
         driver.get(url);
@@ -37,8 +38,10 @@ public class complicatedPage {
 
     @When("^I click the button with (\\d+)$")
     public void i_click_the_button_at_and(int arg) {
+        By[] button = comPOM.getButton();
 
-        throw new PendingException();
+        driver.findElement(button[arg]).click();
+
 
     }
 

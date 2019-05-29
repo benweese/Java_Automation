@@ -6,21 +6,41 @@ import org.openqa.selenium.WebDriver;
 public class complicatedPOM {
     WebDriver driver;
 
-    By button0 = By.className("et_pb_button et_pb_button_0 et_pb_bg_layout_light");
-    By button1 = By.className("et_pb_button et_pb_button_1 et_pb_bg_layout_light");
-    By button2 = By.className("et_pb_button et_pb_button_2 et_pb_bg_layout_light");
-    By button3 = By.className("et_pb_button et_pb_button_3 et_pb_bg_layout_light");
-    By button4 = By.className("et_pb_button et_pb_button_4 et_pb_bg_layout_light");
-    By button5 = By.className("et_pb_button et_pb_button_5 et_pb_bg_layout_light");
-    By button6 = By.className("et_pb_button et_pb_button_6 et_pb_bg_layout_light");
-    By button7 = By.className("et_pb_button et_pb_button_7 et_pb_bg_layout_light");
-    By button8 = By.className("et_pb_button et_pb_button_8 et_pb_bg_layout_light");
-    By button9 = By.className("et_pb_button et_pb_button_9 et_pb_bg_layout_light");
-    By button10 = By.className("et_pb_button et_pb_button_10 et_pb_bg_layout_light");
-    By button11 = By.className("et_pb_button et_pb_button_11 et_pb_bg_layout_light");
-    By button12 = By.className("et_pb_button et_pb_button_12 et_pb_bg_layout_light");
+    By button0 = By.className("et_pb_button_0");
+    By button1 = By.className("et_pb_button_1");
+    By button2 = By.className("et_pb_button_2");
+    By button3 = By.className("et_pb_button_3");
+    By button4 = By.className("et_pb_button_4");
+    By button5 = By.className("et_pb_button_5");
+    By button6 = By.className("et_pb_button_6");
+    By button7 = By.className("et_pb_button_7");
+    By button8 = By.className("et_pb_button_8");
+    By button9 = By.className("et_pb_button_9");
+    By button10 = By.className("et_pb_button_10");
+    By button11 = By.className("et_pb_button_11");
+    By button12 = By.className("et_pb_button_12");
 
     public complicatedPOM(WebDriver driver){
         this.driver = driver;
     }
+
+    public By[] getButton(){
+        By[] array = new By[13];
+        array[0] = button0;
+        array[1] = button1;
+        array[2] = button2;
+        array[3] = button3;
+        array[4] = button4;
+        array[5] = button5;
+        array[6] = button6;
+        array[7] = button7;
+        array[8] = button8;
+        array[9] = button9;
+        array[10] = button10;
+        array[11] = button11;
+        array[12] = button12;
+        return array;
+    }
+
+
 }
