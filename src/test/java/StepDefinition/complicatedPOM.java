@@ -18,14 +18,25 @@ public class complicatedPOM {
     By button9 = By.className("et_pb_button_9");
     By button10 = By.className("et_pb_button_10");
     By button11 = By.className("et_pb_button_11");
-    By button12 = By.className("et_pb_button_12");
+
+    By socialM0 = By.className("et_pb_social_media_follow_network_0");
+    By socialM1 = By.className("et_pb_social_media_follow_network_1");
+    By socialM2 = By.className("et_pb_social_media_follow_network_2");
+    By socialM3 = By.className("et_pb_social_media_follow_network_3");
+    By socialM4 = By.className("et_pb_social_media_follow_network_4");
+    By socialM5 = By.className("et_pb_social_media_follow_network_5");
+    By socialM6 = By.className("et_pb_social_media_follow_network_6");
+    By socialM7 = By.className("et_pb_social_media_follow_network_7");
+    By socialM8 = By.className("et_pb_social_media_follow_network_8");
+    By socialM9 = By.className("et_pb_social_media_follow_network_9");
+
 
     public complicatedPOM(WebDriver driver){
         this.driver = driver;
     }
 
     public By[] getButton(){
-        By[] array = new By[13];
+        By[] array = new By[12];
         array[0] = button0;
         array[1] = button1;
         array[2] = button2;
@@ -38,7 +49,22 @@ public class complicatedPOM {
         array[9] = button9;
         array[10] = button10;
         array[11] = button11;
-        array[12] = button12;
+        return array;
+    }
+
+    public By[] getSocial(){
+        By[] array = new By[10];
+        array[0] = socialM0;
+        array[1] = socialM1;
+        array[2] = socialM2;
+        array[3] = socialM3;
+        array[4] = socialM4;
+        array[5] = socialM5;
+        array[6] = socialM6;
+        array[7] = socialM7;
+        array[8] = socialM8;
+        array[9] = socialM9;
+
         return array;
     }
 

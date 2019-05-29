@@ -31,7 +31,7 @@ public class complicatedPage {
 
     @Given("^I find a button$")
     public void i_find_a_button() {
-        Assert.assertEquals(driver.getCurrentUrl(), url);
+        Assert.assertEquals(url, driver.getCurrentUrl());
         WebElement button = driver.findElement(comPOM.button0);
         Assert.assertTrue(button.isDisplayed());
     }
@@ -48,7 +48,31 @@ public class complicatedPage {
     @Then("^I am taken back to the page$")
     public void i_am_taken_back_to_the_page() {
 
-        Assert.assertEquals(driver.getCurrentUrl(), url);
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        driver.quit();
+    }
+
+    @Given("^I find a icon$")
+    public void i_find_a_icon() {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        WebElement social = driver.findElement(comPOM.socialM0);
+        Assert.assertTrue(social.isDisplayed());
+    }
+
+    @When("^I click the icon with (\\d+)$")
+    public void i_click_the_icon_with(int arg) {
+        By[] social = comPOM.getSocial();
+
+        driver.findElement(social[arg]).click();
+    }
+
+    @Then("^I am taken to the media platform (\\d+)$")
+    public void i_am_taken_to_the_media_platform(int arg) {
+        if(arg%2 == 0){
+            Assert.assertEquals("https://twitter.com/Nikolay_A00", driver.getCurrentUrl());
+        }else{
+            Assert.assertEquals("https://www.facebook.com/Ultimateqa1/", driver.getCurrentUrl());
+        }
         driver.quit();
     }
 }
