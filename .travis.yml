@@ -15,8 +15,8 @@ install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
   - whereis google-chrome-stable
   - whereis chromedriver
   - ./mvnw clean install
-  - mvn test -Dtest=TestRunner.Runner.java
-  - mvn verify
+  - ./mvnw test -Dtest=TestRunner.Runner.java
+  - ./mvnw verify
   
   cache:
   directories:
