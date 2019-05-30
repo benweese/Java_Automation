@@ -10,9 +10,10 @@ install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
   - sudo mv -f ~/chromedriver /usr/local/share/
   - sudo chmod +x /usr/local/share/chromedriver
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  - mvn clean install
   
   script:
   - whereis google-chrome-stable
   - whereis chromedriver
-  - ./mvnw clean install
-  - ./mvnw test -Dtest=TestRunner.Runner.java
+  - mvn test -Dtest=TestRunner.Runner.java
+
