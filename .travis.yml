@@ -1,4 +1,4 @@
-  language: java
+language: java
 jdk:
   - oraclejdk12
 addons: # get google-chrome-stable
@@ -14,4 +14,10 @@ install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
   script:
   - whereis google-chrome-stable
   - whereis chromedriver
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dtest=TestRunner.Runner.java -B -V 
+  - ./mvnw clean install
+  - mvn test -Dtest=TestRunner.Runner.java
+  - mvn verify
+  
+  cache:
+  directories:
+  - $HOME/.m2
