@@ -14,5 +14,6 @@ install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
   script:
   - whereis google-chrome-stable
   - whereis chromedriver
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-  - mvn test -B
+  - mvn install -Dmaven.javadoc.skip=true -B -V
+  - mvn clean test -Dtest=TestRunner.Runner.java
+  - mvn verify
