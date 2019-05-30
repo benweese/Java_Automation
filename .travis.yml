@@ -16,7 +16,3 @@ install: # Install ChromeDriver (64bits; replace 64 with 32 for 32bits).
   - whereis chromedriver
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - mvn test -B
-
-cache:
-  directories:
-  - $HOME/.m2
