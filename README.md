@@ -51,7 +51,8 @@ With testing our Travis-CI runner will use maven to run our automation scripts i
     public complicatedPOM(WebDriver driver){
         this.driver = driver;
     }
-'''
+    
+```
 
 <b>Java/Cucumber</b>
 
@@ -68,7 +69,8 @@ With testing our Travis-CI runner will use maven to run our automation scripts i
         By[] button = comPOM.getButton();
 
         driver.findElement(button[arg]).click();
-        ```
+
+```
 
 ## Documentation
 - [Page Object Model by Guru99](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html)
