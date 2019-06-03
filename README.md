@@ -31,7 +31,7 @@ This is to keep my automations skills sharp.
 - [Java SE Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 ## Features
-With testing our Travis-CI runner will use maven to run our automation scripts in Command line.
+With testing our Circle-CI runner will use maven to run our automation scripts in Command line.
 
 ## Code Example
 <b>Page Object</b>
