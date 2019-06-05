@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -153,7 +154,7 @@ public class complicatedPage {
         driver.close();
         driver.quit();
     }
-    //Tumblr Share Button
+    //Facebook Share Button
     @Given("^I find a Facebook icon$")
     public void i_find_a_facebook_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
@@ -177,5 +178,46 @@ public class complicatedPage {
         Assert.assertEquals(fbURL, driver.getCurrentUrl());
         driver.close();
         driver.quit();
+    }
+
+    @Given("^I enter in contact information$")
+    public void i_enter_in_contact_information() {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        driver.findElement(comPOM.capName).sendKeys("Bugs Bunny");
+        driver.findElement(comPOM.capEmail).sendKeys("Bugs@WhatsUp.Doc");
+    }
+
+    @And("^I enter in a message$")
+    public void i_enter_in_a_message() {
+        driver.findElement(comPOM.capMessage).sendKeys("What's up Doc?");
+    }
+
+    @When("^I come to the captcha$")
+    public void i_come_to_the_captcha() {
+        Assert.assertEquals("Bugs Bunny", driver.findElement(comPOM.capName).getAttribute("value"));
+        Assert.assertEquals("Bugs@WhatsUp.Doc", driver.findElement(comPOM.capEmail).getAttribute("value"));
+        Assert.assertEquals("What's up Doc?", driver.findElement(comPOM.capMessage).getAttribute("value"));
+    }
+
+    @And("^I calculate the answer$")
+    public void i_calculate_the_answer() {
+        String d1 = driver.findElement(comPOM.capAnswer).getAttribute("data-first_digit");
+        String d2 = driver.findElement(comPOM.capAnswer).getAttribute("data-second_digit");
+        int calc = Integer.parseInt(d1) + Integer.parseInt(d2);
+        String result = String.valueOf(calc);
+        driver.findElement(comPOM.capAnswer).sendKeys(result);
+        Assert.assertNotNull(driver.findElement(comPOM.capAnswer).getAttribute("value"));
+    }
+
+    @Then("^I click submit$")
+    public void i_click_submit() {
+        driver.findElement(comPOM.capAnswer).submit();
+    }
+
+    @And("^I see the message$")
+    public void i_see_the_message() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        String message = driver.findElement(By.id("et_pb_contact_form_0")).findElement(By.className("et-pb-contact-message")).getAttribute("value");
+        Assert.assertEquals("Thanks for contacting us", message);
     }
 }

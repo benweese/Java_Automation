@@ -36,6 +36,11 @@ public class complicatedPOM {
     By tumblrShare = By.className("swp_tumblr_icon");
     By facebookShare = By.className("swp_facebook_icon");
 
+    By capName = By.id("et_pb_contact_name_0");
+    By capEmail = By.id("et_pb_contact_email_0");
+    By capMessage = By.id("et_pb_contact_message_0");
+    By capAnswer = By.name("et_pb_contact_captcha_0");
+
     public complicatedPOM(WebDriver driver){
         this.driver = driver;
     }

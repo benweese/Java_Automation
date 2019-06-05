@@ -59,3 +59,11 @@ Feature: Complicated Page
     Given I find a Facebook icon
     When I click the Facebook icon
     Then I am shown a popup to share on Facebook
+
+  Scenario: Do the math Captcha
+    Given I enter in contact information
+    And   I enter in a message
+    When  I come to the captcha
+    And   I calculate the answer
+    Then  I click submit
+    And   I see the message
