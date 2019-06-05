@@ -9,7 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
-
+import java.util.concurrent.TimeUnit;
 
 public class complicatedPage {
 
@@ -17,6 +17,7 @@ public class complicatedPage {
     private complicatedPOM comPOM;
     private String url;
     private setup setup = new setup();
+    private String parent;
 
 
     @Before
@@ -73,6 +74,108 @@ public class complicatedPage {
         }else{
             Assert.assertEquals("https://www.facebook.com/Ultimateqa1/", driver.getCurrentUrl());
         }
+        driver.quit();
+    }
+
+    //Twitter Share Button
+    @Given("^I find a twitter icon$")
+    public void i_find_a_twitter_icon() {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        WebElement social = driver.findElement(comPOM.twitterShare);
+        Assert.assertTrue(social.isDisplayed());
+    }
+
+    @When("^I click the twitter icon$")
+    public void i_click_the_twitter_icon() {
+        parent = driver.getWindowHandle();
+        driver.findElement(comPOM.twitterShare).click();
+    }
+
+    @Then("^I am shown a popup to share on twitter$")
+    public void i_am_shown_a_popup_to_share_on_twitter() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        for(String child : driver.getWindowHandles()){
+            driver.switchTo().window(child);
+        }
+        String twURL = "https://twitter.com/intent/tweet?text=Complicated+Page&url=https%3A%2F%2Fwww.ultimateqa.com%2Fcomplicated-page%2F&via=Nikolay_A00";
+        Assert.assertEquals(twURL, driver.getCurrentUrl());
+        driver.close();
+        driver.quit();
+    }
+    //LinkedIn Share Button
+    @Given("^I find a LinkedIn icon$")
+    public void i_find_a_linkedIn_icon() {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        WebElement social = driver.findElement(comPOM.linkedInShare);
+        Assert.assertTrue(social.isDisplayed());
+    }
+
+    @When("^I click the LinkedIn icon$")
+    public void i_click_the_linkedIn_icon() {
+        parent = driver.getWindowHandle();
+        driver.findElement(comPOM.linkedInShare).click();
+    }
+
+    @Then("^I am shown a popup to share on LinkedIn$")
+    public void i_am_shown_a_popup_to_share_on_linkedIn() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        for(String child : driver.getWindowHandles()){
+            driver.switchTo().window(child);
+        }
+        String liURL = "https://www.linkedin.com/m/login/";
+        //String liURL = "https://www.linkedin.com/cws/share?url=https%3A%2F%2Fwww.ultimateqa.com%2Fcomplicated-page%2F";
+        Assert.assertEquals(liURL, driver.getCurrentUrl());
+        driver.close();
+        driver.quit();
+    }
+    //Tumblr Share Button
+    @Given("^I find a Tumblr icon$")
+    public void i_find_a_tumblr_icon() {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        WebElement social = driver.findElement(comPOM.tumblrShare);
+        Assert.assertTrue(social.isDisplayed());
+    }
+
+    @When("^I click the Tumblr icon$")
+    public void i_click_the_tumblr_icon() {
+        parent = driver.getWindowHandle();
+        driver.findElement(comPOM.tumblrShare).click();
+    }
+
+    @Then("^I am shown a popup to share on Tumblr$")
+    public void i_am_shown_a_popup_to_share_on_tumblr() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        for(String child : driver.getWindowHandles()){
+            driver.switchTo().window(child);
+        }
+        String tbURL = "https://www.tumblr.com/login?redirect_to=https%3A%2F%2Fwww.tumblr.com%2Fwidgets%2Fshare%2Ftool%3Fposttype%3Dlink%26canonicalUrl%3Dhttps%253A%252F%252Fwww.ultimateqa.com%252Fcomplicated-page%252F%26title%3DComplicated%2BPage";
+        Assert.assertEquals(tbURL, driver.getCurrentUrl());
+        driver.close();
+        driver.quit();
+    }
+    //Tumblr Share Button
+    @Given("^I find a Facebook icon$")
+    public void i_find_a_facebook_icon() {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        WebElement social = driver.findElement(comPOM.facebookShare);
+        Assert.assertTrue(social.isDisplayed());
+    }
+
+    @When("^I click the Facebook icon$")
+    public void i_click_the_facebook_icon() {
+        parent = driver.getWindowHandle();
+        driver.findElement(comPOM.facebookShare).click();
+    }
+
+    @Then("^I am shown a popup to share on Facebook$")
+    public void i_am_shown_a_popup_to_share_on_facebook() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        for(String child : driver.getWindowHandles()){
+            driver.switchTo().window(child);
+        }
+        String fbURL = "https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fshare.php%3Fu%3Dhttps%253A%252F%252Fwww.ultimateqa.com%252Fcomplicated-page%252F&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=en_US";
+        Assert.assertEquals(fbURL, driver.getCurrentUrl());
+        driver.close();
         driver.quit();
     }
 }

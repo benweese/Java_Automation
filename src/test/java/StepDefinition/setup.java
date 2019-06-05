@@ -21,6 +21,7 @@ public class setup {
         options.addArguments("--disable-extensions");
 
         driver = new ChromeDriver(options);
+
     }
 
     WebDriver getDriver() {

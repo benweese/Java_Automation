@@ -30,6 +30,11 @@ public class complicatedPOM {
     By socialM8 = By.className("et_pb_social_media_follow_network_8");
     By socialM9 = By.className("et_pb_social_media_follow_network_9");
 
+    By twitterShare = By.className("swp_twitter_icon");
+    By linkedInShare = By.className("swp_linkedin_icon");
+    //By emailShare = By.className("swp_email_icon");
+    By tumblrShare = By.className("swp_tumblr_icon");
+    By facebookShare = By.className("swp_facebook_icon");
 
     public complicatedPOM(WebDriver driver){
         this.driver = driver;
