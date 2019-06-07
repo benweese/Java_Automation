@@ -24,7 +24,7 @@ This is to keep my automations skills sharp.
 <b>Testing Language</b>
 - [Selenium](https://www.seleniumhq.org/)
 
-<b>Continious Intergration</b>
+<b>Continuous Intergration</b>
 - [CircleCI](https://circleci.com/)
 
 <b>Depandacy Maintenance </b>
