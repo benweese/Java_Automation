@@ -123,6 +123,4 @@ With testing our Circle-CI runner will use maven to run our automation scripts i
 - [Browser Testing CircleCI](https://circleci.com/docs/2.0/browser-testing/)
 
 ## Credits
-Ben Weese
-
-Ben Weese © [Ben Weese](https://benweese.dev)
+[Ben Weese](https://benweese.dev)
