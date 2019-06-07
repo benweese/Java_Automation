@@ -39,7 +39,11 @@ public class complicatedPOM {
     By capName = By.id("et_pb_contact_name_0");
     By capEmail = By.id("et_pb_contact_email_0");
     By capMessage = By.id("et_pb_contact_message_0");
-    By capAnswer = By.name("et_pb_contact_captcha_0");
+    By capAnswer = By.cssSelector("div.et_pb_contact_form_0 div.et-pb-contact-message p");
+
+    By search2 = By.cssSelector("div.id.search-2 div.id.searchform div.input.id.s");
+
+    By post = By.id("post-8807");
 
     public complicatedPOM(WebDriver driver){
         this.driver = driver;

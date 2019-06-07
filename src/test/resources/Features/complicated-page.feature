@@ -67,3 +67,8 @@ Feature: Complicated Page
     And   I calculate the answer
     Then  I click submit
     And   I see the message
+
+  Scenario: Search for the word holidays
+    Given I find the search function
+    When  I enter the word holidays and submit
+    Then  I am taken to the search page

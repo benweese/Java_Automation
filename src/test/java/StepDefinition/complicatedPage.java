@@ -214,9 +214,32 @@ public class complicatedPage {
     @And("^I see the message$")
     public void i_see_the_message() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String message = driver.findElement(By.cssSelector("div.et_pb_contact_form_0 div.et-pb-contact-message p")).getText();
+        String message = driver.findElement(comPOM.capAnswer).getText();
         LOGGER.log(Level.INFO, message);
         Assert.assertEquals("Thanks for contacting us", message);
         driver.quit();
+    }
+
+    @Given("I find the search function")
+    public void iFindTheSearchFunction() {
+        Assert.assertEquals(url, driver.getCurrentUrl());
+        WebElement search = driver.findElement(comPOM.search2);
+        Assert.assertTrue(search.isDisplayed());
+    }
+
+    @When("I enter the word holidays and submit")
+    public void iEnterTheWordHolidaysAndSubmit() {
+        WebElement search = driver.findElement(comPOM.search2);
+        search.sendKeys("holidays");
+        search.submit();
+
+    }
+
+    @Then("I am taken to the search page")
+    public void iAmTakenToTheSearchPage() {
+        Assert.assertEquals("https://www.ultimateqa.com/?s=holidays", driver.getCurrentUrl());
+        WebElement post =driver.findElement(comPOM.post);
+        Assert.assertTrue(post.isDisplayed());
+        Assert.assertTrue(post.getText().contains("Happy Holidays!"));
     }
 }
