@@ -6,8 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class setup {
 
-    WebDriver driver;
-    String url;
+    private WebDriver driver;
+    private String url;
 
     void setDriver() {
 
@@ -15,7 +15,7 @@ public class setup {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1200x1100");
         options.addArguments("--disable-extensions");

@@ -11,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class complicatedPage {
 
@@ -18,8 +20,7 @@ public class complicatedPage {
     private complicatedPOM comPOM;
     private String url;
     private setup setup = new setup();
-    private String parent;
-
+    private static final Logger LOGGER = Logger.getLogger( complicatedPage.class.getName() );
 
     @Before
     public void beforeSenario(){
@@ -88,7 +89,6 @@ public class complicatedPage {
 
     @When("^I click the twitter icon$")
     public void i_click_the_twitter_icon() {
-        parent = driver.getWindowHandle();
         driver.findElement(comPOM.twitterShare).click();
     }
 
@@ -113,7 +113,6 @@ public class complicatedPage {
 
     @When("^I click the LinkedIn icon$")
     public void i_click_the_linkedIn_icon() {
-        parent = driver.getWindowHandle();
         driver.findElement(comPOM.linkedInShare).click();
     }
 
@@ -139,7 +138,6 @@ public class complicatedPage {
 
     @When("^I click the Tumblr icon$")
     public void i_click_the_tumblr_icon() {
-        parent = driver.getWindowHandle();
         driver.findElement(comPOM.tumblrShare).click();
     }
 
@@ -164,7 +162,6 @@ public class complicatedPage {
 
     @When("^I click the Facebook icon$")
     public void i_click_the_facebook_icon() {
-        parent = driver.getWindowHandle();
         driver.findElement(comPOM.facebookShare).click();
     }
 
@@ -216,8 +213,10 @@ public class complicatedPage {
 
     @And("^I see the message$")
     public void i_see_the_message() {
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        String message = driver.findElement(By.id("et_pb_contact_form_0")).findElement(By.className("et-pb-contact-message")).getAttribute("value");
-//        Assert.assertEquals("Thanks for contacting us", message);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        String message = driver.findElement(By.cssSelector("div.et_pb_contact_form_0 div.et-pb-contact-message p")).getText();
+        LOGGER.log(Level.INFO, message);
+        Assert.assertEquals("Thanks for contacting us", message);
+        driver.quit();
     }
 }
