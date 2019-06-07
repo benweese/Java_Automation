@@ -24,6 +24,15 @@ This is to keep my automations skills sharp.
 <b>Testing Language</b>
 - [Selenium](https://www.seleniumhq.org/)
 
+<b>Continious Intergration</b>
+- [CircleCI](https://circleci.com/)
+
+<b>Depandacy Maintenance </b>
+- [Dependabot by Github](https://dependabot.com/)
+
+<b>Security</b>
+- [Sonatype Depshield](https://www.sonatype.com/depshield)
+
 <b>Downloads</b>
 - [GeckoDriver](https://github.com/mozilla/geckodriver/releases)
 - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
@@ -34,6 +43,24 @@ This is to keep my automations skills sharp.
 With testing our Circle-CI runner will use maven to run our automation scripts in Command line.
 
 ## Code Example
+<b>Setup</b>
+```
+    void setDriver() {
+
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/chromedriver");
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1200x1100");
+        options.addArguments("--disable-extensions");
+
+        driver = new ChromeDriver(options);
+
+    }
+```
+
 <b>Page Object</b>
 	
   ```
@@ -53,6 +80,12 @@ With testing our Circle-CI runner will use maven to run our automation scripts i
     }
     
 ```
+<b>Cucumber</b>
+```
+    Given I find a button
+    When I click the button with <id>
+    Then I am taken back to the page
+```
 
 <b>Java/Cucumber</b>
 
@@ -71,9 +104,23 @@ With testing our Circle-CI runner will use maven to run our automation scripts i
         driver.findElement(button[arg]).click();
 
 ```
+<b>Runner</b>
+```
+	//This is the JUnit Runner for our test.
+	//We are using both Cucumber.
+	@RunWith(Cucumber.class)
+	//We define where the Cucumber framework is located and where our code is.
+	@CucumberOptions(features="src/test/resources/Features",glue={"StepDefinition"})
+
+	public class runner {
+
+	}
+```
 
 ## Documentation
 - [Page Object Model by Guru99](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html)
+- [Maven and CircleCI](https://circleci.com/blog/optimizing-maven-builds-on-circleci/)
+- [Browser Testing CircleCI](https://circleci.com/docs/2.0/browser-testing/)
 
 ## Credits
 Ben Weese
