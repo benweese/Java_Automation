@@ -11,7 +11,7 @@ This is to keep my automations skills sharp.
 
 ## Build status of master
 
-[![CircleCI](https://circleci.com/gh/benweese/javaautomation/tree/master.svg?style=svg)](https://circleci.com/gh/benweese/javaautomation/tree/master) [![DepShield Badge](https://depshield.sonatype.org/badges/benweese/javaautomation/depshield.svg)](https://depshield.github.io)
+[![CircleCI](https://circleci.com/gh/benweese/javaautomation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/javaautomation/tree/master) [![DepShield Badge](https://depshield.sonatype.org/badges/benweese/javaautomation/depshield.svg)](https://depshield.github.io)
 
 ## Tools
 
