@@ -9,9 +9,8 @@ This project is for practiceing Cucumber, Selenuim, and Java.
 ## Motivation
 This is to keep my automations skills sharp.
 
-## Build status of master
-
-[![CircleCI](https://circleci.com/gh/benweese/javaautomation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/javaautomation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/javaautomation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/javaautomation/badge.svg)](https://snyk.io/test/github/benweese/javaautomation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/javaautomation.svg) [![Board Status](https://dev.azure.com/benweese/67e641fe-20c6-4660-816f-4802bd7be220/d373441d-8113-49b4-9a3f-de0a46597a69/_apis/work/boardbadge/523a1189-41c8-4c79-82cd-0be6b5810d4b)](https://dev.azure.com/benweese/67e641fe-20c6-4660-816f-4802bd7be220/_boards/board/t/d373441d-8113-49b4-9a3f-de0a46597a69/Microsoft.RequirementCategory)
+## Badges
+[![CircleCI](https://circleci.com/gh/benweese/javaautomation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/javaautomation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/javaautomation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/javaautomation/badge.svg)](https://snyk.io/test/github/benweese/javaautomation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/javaautomation.svg)
 
 ## Tools
 
