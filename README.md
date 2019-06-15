@@ -1,10 +1,11 @@
 # BenWeese.Dev
 - [Home](https://benweese.dev)
+- [Java Automation Template](https://benweese.dev/Java_Automation_Template/)
 - [Postman](https://benweese.dev/Postman/)
 - [BenWeese.com](https://benweese.com)
 
 ## Java Automation
-This project is for practiceing Cucumber, Selenuim, and Java.
+This project is for practiceing Cucumber, Selenuim, and Java. You can find the link for the template above for creating your own automation. To learn more you can check out the [Wiki](https://github.com/benweese/javaautomation/wiki) for this repo where I document what I have learned. 
 
 ## Motivation
 This is to keep my automations skills sharp.
