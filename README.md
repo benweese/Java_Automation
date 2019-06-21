@@ -3,8 +3,6 @@
 - [Java Automation Template](https://benweese.dev/Java_Automation_Template/)
 - [Postman](https://benweese.dev/Postman/)
 - [BenWeese.com](https://benweese.com)
-- [Websites](http://benweese.dev/Websites/)
-- [Synology NAS](https://benweese.dev/Synology-NAS/)
 
 ## Java Automation
 This project is for practiceing Cucumber, Selenuim, and Java. You can find the link for the template above for creating your own automation. To learn more you can check out the [Wiki](https://github.com/benweese/javaautomation/wiki) for this repo where I document what I have learned. 
