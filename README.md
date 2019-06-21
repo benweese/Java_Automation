@@ -12,7 +12,7 @@ This project is for practiceing Cucumber, Selenuim, and Java. You can find the l
 This is to keep my automations skills sharp.
 
 ## Badges
-[![CircleCI](https://circleci.com/gh/benweese/javaautomation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/javaautomation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/javaautomation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/javaautomation/badge.svg)](https://snyk.io/test/github/benweese/javaautomation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/javaautomation.svg)
+[![CircleCI](https://circleci.com/gh/benweese/Java_Automation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/Java_Automation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/Java_Automation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/Java_Automation/badge.svg)](https://snyk.io/test/github/benweese/Java_Automation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/Java_Automation.svg)
 
 ## Tools
 
