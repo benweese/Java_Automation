@@ -38,22 +38,18 @@ public class complicatedPage {
     @Given("I find a button")
     public void i_find_a_button() {
         Assert.assertEquals(url, driver.getCurrentUrl());
-        WebElement button = driver.findElement(comPOM.button0);
+        WebElement button = driver.findElement(comPOM.getButton(0));
         Assert.assertTrue(button.isDisplayed());
     }
 
     @When("I click the button with (\\d+)")
     public void i_click_the_button_at_and(int arg) {
         By[] button = comPOM.getButton();
-
         driver.findElement(button[arg]).click();
-
-
     }
 
     @Then("I am taken back to the page")
     public void i_am_taken_back_to_the_page() {
-
         Assert.assertEquals(url, driver.getCurrentUrl());
         driver.quit();
     }
@@ -61,14 +57,13 @@ public class complicatedPage {
     @Given("I find a icon")
     public void i_find_a_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
-        WebElement social = driver.findElement(comPOM.socialM0);
+        WebElement social = driver.findElement(comPOM.getSocial(0));
         Assert.assertTrue(social.isDisplayed());
     }
 
     @When("I click the icon with (\\d+)")
     public void i_click_the_icon_with(int arg) {
         By[] social = comPOM.getSocial();
-
         driver.findElement(social[arg]).click();
     }
 
