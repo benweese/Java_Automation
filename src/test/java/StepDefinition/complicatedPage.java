@@ -35,14 +35,14 @@ public class complicatedPage {
         driver.get(url);
     }
 
-    @Given("^I find a button$")
+    @Given("I find a button")
     public void i_find_a_button() {
         Assert.assertEquals(url, driver.getCurrentUrl());
         WebElement button = driver.findElement(comPOM.button0);
         Assert.assertTrue(button.isDisplayed());
     }
 
-    @When("^I click the button with (\\d+)$")
+    @When("I click the button with (\\d+)")
     public void i_click_the_button_at_and(int arg) {
         By[] button = comPOM.getButton();
 
@@ -51,28 +51,28 @@ public class complicatedPage {
 
     }
 
-    @Then("^I am taken back to the page$")
+    @Then("I am taken back to the page")
     public void i_am_taken_back_to_the_page() {
 
         Assert.assertEquals(url, driver.getCurrentUrl());
         driver.quit();
     }
 
-    @Given("^I find a icon$")
+    @Given("I find a icon")
     public void i_find_a_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
         WebElement social = driver.findElement(comPOM.socialM0);
         Assert.assertTrue(social.isDisplayed());
     }
 
-    @When("^I click the icon with (\\d+)$")
+    @When("I click the icon with (\\d+)")
     public void i_click_the_icon_with(int arg) {
         By[] social = comPOM.getSocial();
 
         driver.findElement(social[arg]).click();
     }
 
-    @Then("^I am taken to the media platform (\\d+)$")
+    @Then("I am taken to the media platform (\\d+)")
     public void i_am_taken_to_the_media_platform(int arg) {
         if(arg%2 == 0){
             Assert.assertEquals("https://twitter.com/Nikolay_A00", driver.getCurrentUrl());
@@ -83,19 +83,19 @@ public class complicatedPage {
     }
 
     //Twitter Share Button
-    @Given("^I find a twitter icon$")
+    @Given("I find a twitter icon")
     public void i_find_a_twitter_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
         WebElement social = driver.findElement(comPOM.twitterShare);
         Assert.assertTrue(social.isDisplayed());
     }
 
-    @When("^I click the twitter icon$")
+    @When("I click the twitter icon")
     public void i_click_the_twitter_icon() {
         driver.findElement(comPOM.twitterShare).click();
     }
 
-    @Then("^I am shown a popup to share on twitter$")
+    @Then("I am shown a popup to share on twitter")
     public void i_am_shown_a_popup_to_share_on_twitter() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         for(String child : driver.getWindowHandles()){
@@ -107,19 +107,19 @@ public class complicatedPage {
         driver.quit();
     }
     //LinkedIn Share Button
-    @Given("^I find a LinkedIn icon$")
+    @Given("I find a LinkedIn icon")
     public void i_find_a_linkedIn_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
         WebElement social = driver.findElement(comPOM.linkedInShare);
         Assert.assertTrue(social.isDisplayed());
     }
 
-    @When("^I click the LinkedIn icon$")
+    @When("I click the LinkedIn icon")
     public void i_click_the_linkedIn_icon() {
         driver.findElement(comPOM.linkedInShare).click();
     }
 
-    @Then("^I am shown a popup to share on LinkedIn$")
+    @Then("I am shown a popup to share on LinkedIn")
     public void i_am_shown_a_popup_to_share_on_linkedIn() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         for(String child : driver.getWindowHandles()){
@@ -132,19 +132,19 @@ public class complicatedPage {
         driver.quit();
     }
     //Tumblr Share Button
-    @Given("^I find a Tumblr icon$")
+    @Given("I find a Tumblr icon")
     public void i_find_a_tumblr_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
         WebElement social = driver.findElement(comPOM.tumblrShare);
         Assert.assertTrue(social.isDisplayed());
     }
 
-    @When("^I click the Tumblr icon$")
+    @When("I click the Tumblr icon")
     public void i_click_the_tumblr_icon() {
         driver.findElement(comPOM.tumblrShare).click();
     }
 
-    @Then("^I am shown a popup to share on Tumblr$")
+    @Then("I am shown a popup to share on Tumblr")
     public void i_am_shown_a_popup_to_share_on_tumblr() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         for(String child : driver.getWindowHandles()){
@@ -156,19 +156,19 @@ public class complicatedPage {
         driver.quit();
     }
     //Facebook Share Button
-    @Given("^I find a Facebook icon$")
+    @Given("I find a Facebook icon")
     public void i_find_a_facebook_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
         WebElement social = driver.findElement(comPOM.facebookShare);
         Assert.assertTrue(social.isDisplayed());
     }
 
-    @When("^I click the Facebook icon$")
+    @When("I click the Facebook icon")
     public void i_click_the_facebook_icon() {
         driver.findElement(comPOM.facebookShare).click();
     }
 
-    @Then("^I am shown a popup to share on Facebook$")
+    @Then("I am shown a popup to share on Facebook")
     public void i_am_shown_a_popup_to_share_on_facebook() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         for(String child : driver.getWindowHandles()){
@@ -180,26 +180,26 @@ public class complicatedPage {
         driver.quit();
     }
 
-    @Given("^I enter in contact information$")
+    @Given("I enter in contact information")
     public void i_enter_in_contact_information() {
         Assert.assertEquals(url, driver.getCurrentUrl());
         driver.findElement(comPOM.capName).sendKeys("Bugs Bunny");
         driver.findElement(comPOM.capEmail).sendKeys("Bugs@WhatsUp.Doc");
     }
 
-    @And("^I enter in a message$")
+    @And("I enter in a message")
     public void i_enter_in_a_message() {
         driver.findElement(comPOM.capMessage).sendKeys("What's up Doc?");
     }
 
-    @When("^I come to the captcha$")
+    @When("I come to the captcha")
     public void i_come_to_the_captcha() {
         Assert.assertEquals("Bugs Bunny", driver.findElement(comPOM.capName).getAttribute("value"));
         Assert.assertEquals("Bugs@WhatsUp.Doc", driver.findElement(comPOM.capEmail).getAttribute("value"));
         Assert.assertEquals("What's up Doc?", driver.findElement(comPOM.capMessage).getAttribute("value"));
     }
 
-    @And("^I calculate the answer$")
+    @And("I calculate the answer")
     public void i_calculate_the_answer() {
         String d1 = driver.findElement(comPOM.capAnswer).getAttribute("data-first_digit");
         String d2 = driver.findElement(comPOM.capAnswer).getAttribute("data-second_digit");
@@ -209,12 +209,12 @@ public class complicatedPage {
         Assert.assertNotNull(driver.findElement(comPOM.capAnswer).getAttribute("value"));
     }
 
-    @Then("^I click submit$")
+    @Then("I click submit")
     public void i_click_submit() {
         driver.findElement(comPOM.capAnswer).submit();
     }
 
-    @And("^I see the message$")
+    @And("I see the message")
     public void i_see_the_message() {
         WebDriverWait wait=new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.textToBe(comPOM.capSuccess, "Thanks for contacting us"));
