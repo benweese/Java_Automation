@@ -10,7 +10,10 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -213,8 +216,9 @@ public class complicatedPage {
 
     @And("^I see the message$")
     public void i_see_the_message() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String message = driver.findElement(comPOM.capAnswer).getText();
+        WebDriverWait wait=new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.textToBe(comPOM.capSuccess, "Thanks for contacting us"));
+        String message = driver.findElement(comPOM.capSuccess).getText();
         LOGGER.log(Level.INFO, message);
         Assert.assertEquals("Thanks for contacting us", message);
         driver.quit();
@@ -238,8 +242,9 @@ public class complicatedPage {
     @Then("I am taken to the search page")
     public void iAmTakenToTheSearchPage() {
         Assert.assertEquals("https://www.ultimateqa.com/?s=holidays", driver.getCurrentUrl());
-        WebElement post =driver.findElement(comPOM.post);
+        WebElement post = driver.findElement(comPOM.post);
         Assert.assertTrue(post.isDisplayed());
         Assert.assertTrue(post.getText().contains("Happy Holidays!"));
+        driver.quit();
     }
 }
