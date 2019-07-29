@@ -29,6 +29,11 @@ public class complicatedPOM {
         this.driver = driver;
     }
 
+    public void setButton(){
+        for(int i=0; i<12; i++){
+            button[i] = By.className("et_pb_button_" + i);
+        }
+    }
     public By[] getButton(){
         for(int i=0; i<12; i++){
             button[i] = By.className("et_pb_button_" + i);
@@ -40,10 +45,12 @@ public class complicatedPOM {
         return buttonArg[arg];
     }
 
-    public By[] getSocial(){
+    public void setSocialM(){
         for(int i=0; i<10; i++){
             socialM[i] = By.className("et_pb_social_media_follow_network_" + i);
         }
+    }
+    public By[] getSocial(){
         return socialM;
     }
 

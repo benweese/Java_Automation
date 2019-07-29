@@ -38,6 +38,7 @@ public class complicatedPage {
     @Given("I find a button")
     public void i_find_a_button() {
         Assert.assertEquals(url, driver.getCurrentUrl());
+        comPOM.setButton();
         WebElement button = driver.findElement(comPOM.getButton(0));
         Assert.assertTrue(button.isDisplayed());
     }
@@ -57,6 +58,7 @@ public class complicatedPage {
     @Given("I find a icon")
     public void i_find_a_icon() {
         Assert.assertEquals(url, driver.getCurrentUrl());
+        comPOM.setSocialM();
         WebElement social = driver.findElement(comPOM.getSocial(0));
         Assert.assertTrue(social.isDisplayed());
     }
