@@ -6,7 +6,7 @@ Feature: Complicated Page
     Given I find a button
     When I click the button with <id>
     Then I am taken back to the page
-
+    #This allows us to go through an array of buttons.
     Examples:
       | id  |
       | 0   |
@@ -26,7 +26,7 @@ Feature: Complicated Page
     Given I find a icon
     When I click the icon with <id>
     Then I am taken to the media platform <id>
-
+    #This allows us to go through an array of icons and then check if we were taken to the correct link.
     Examples:
       | id  |
       | 0   |
