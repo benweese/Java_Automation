@@ -3,11 +3,12 @@ package StepDefinition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class complicatedPOM {
-    WebDriver driver;
+ class complicatedPOM {
+    private WebDriver driver;
 
-    By[] button = new By[12];
-    By[] socialM = new By[10];
+    //These are private arrays that has a getter and setter.
+    private By[] button = new By[12];
+    private By[] socialM = new By[10];
 
     By twitterShare = By.className("swp_twitter_icon");
     By linkedInShare = By.className("swp_linkedin_icon");
@@ -25,39 +26,32 @@ public class complicatedPOM {
 
     By post = By.id("post-8807");
 
-    public complicatedPOM(WebDriver driver){
+    complicatedPOM(WebDriver driver){
         this.driver = driver;
     }
 
-    public void setButton(){
+    //This inputs the correct class names into the array.
+    void setButton(){
         for(int i=0; i<12; i++){
             button[i] = By.className("et_pb_button_" + i);
         }
-    }
-    public By[] getButton(){
-        for(int i=0; i<12; i++){
-            button[i] = By.className("et_pb_button_" + i);
-        }
-        return button;
-    }
-    public By getButton(int arg){
-        By[] buttonArg = getButton();
-        return buttonArg[arg];
     }
 
-    public void setSocialM(){
+    //This gets a single button.
+    By getButton(int arg){
+        return button[arg];
+    }
+
+    //This inputs the correct class names into the array.
+    void setSocialM(){
         for(int i=0; i<10; i++){
             socialM[i] = By.className("et_pb_social_media_follow_network_" + i);
         }
     }
-    public By[] getSocial(){
-        return socialM;
-    }
 
-    public By getSocial(int arg){
-        By[] socialArg = getButton();
-        return socialArg[arg];
+    //This gets a single icon.
+    By getSocial(int arg){
+        return socialM[arg];
     }
-
 
 }
