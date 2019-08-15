@@ -1,6 +1,6 @@
 # BenWeese.Dev
 - [Home](https://benweese.dev)
-- [Python Automation](https://github.com/benweese/Python-Automation/)
+- [Python Automation](https://benweese.dev/benweese/Python-Automation/)
 - [Postman](https://benweese.dev/Postman/)
 - [BenWeese.com](https://benweese.com)
 
