@@ -7,11 +7,14 @@
 ## Java Automation
 This project is for practiceing Cucumber, Selenuim, and Java. You can find the link for the template above for creating your own automation. To learn more you can check out the [Wiki](https://github.com/benweese/Java_Automation/wiki) for this repo where I document what I have learned. 
 
+## Badges
+[![CircleCI](https://circleci.com/gh/benweese/Java_Automation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/Java_Automation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/Java_Automation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/Java_Automation/badge.svg)](https://snyk.io/test/github/benweese/Java_Automation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/Java_Automation.svg) [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/benweese/java-automation)
+
 ## Motivation
 This is to keep my automations skills sharp.
 
-## Badges
-[![CircleCI](https://circleci.com/gh/benweese/Java_Automation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/Java_Automation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/Java_Automation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/Java_Automation/badge.svg)](https://snyk.io/test/github/benweese/Java_Automation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/Java_Automation.svg) [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/benweese/java-automation)
+## Notification
+This automation is happy path only and does not test for failures. It is an example and learning on how it can done. If you wish to test more thoroughly then I would suggest using Cucumber and Scenario Outlines to test many different scenarios including failures.
 
 ## Tools
 
