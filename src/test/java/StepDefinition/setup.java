@@ -19,7 +19,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
         }
         //This sets up the chrome browser with all options. Currently having issues with Headless in IntelliJ
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1400x1200");
