@@ -8,7 +8,7 @@
 This project is for practiceing Cucumber, Selenuim, and Java. You can find the link for the template above for creating your own automation. To learn more you can check out the [Wiki](https://github.com/benweese/Java_Automation/wiki) for this repo where I document what I have learned. 
 
 ## Badges
-[![CircleCI](https://circleci.com/gh/benweese/Java_Automation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/Java_Automation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/Java_Automation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/Java_Automation/badge.svg)](https://snyk.io/test/github/benweese/Java_Automation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/Java_Automation.svg) [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/benweese/java-automation)
+[![CircleCI](https://circleci.com/gh/benweese/Java_Automation/tree/master.svg?style=shield)](https://circleci.com/gh/benweese/Java_Automation/tree/master) ![GitHub](https://img.shields.io/github/license/benweese/Java_Automation.svg) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=benweese_Java_Automation&metric=alert_status)](https://sonarcloud.io/dashboard?id=benweese_Java_Automation) [![Known Vulnerabilities](https://snyk.io/test/github/benweese/Java_Automation/badge.svg)](https://snyk.io/test/github/benweese/Java_Automation) ![GitHub issues](https://img.shields.io/github/issues-raw/benweese/Java_Automation.svg) [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/benweese/java-automation)
 
 ## Motivation
 This is to keep my automations skills sharp.
