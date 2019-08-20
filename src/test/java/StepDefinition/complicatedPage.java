@@ -134,7 +134,7 @@ public class complicatedPage {
             driver.switchTo().window(child);
         }
         //String liURL = "https://www.linkedin.com/m/login/";
-        String liURL = "https://www.linkedin.com/cws/share?url=https%3A%2F%2Fwww.ultimateqa.com%2Fcomplicated-page%2F";
+        String liURL = "https://www.linkedin.com/cws/share/?url=https%3A%2F%2Fwww.ultimateqa.com%2Fcomplicated-page%2F";
         Assert.assertEquals(liURL, driver.getCurrentUrl());
         driver.quit();
     }
