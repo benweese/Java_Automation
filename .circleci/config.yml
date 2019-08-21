@@ -6,14 +6,8 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/openjdk:8-jdk
-      - image: circleci/node:jessie-browsers
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
+      # specify the Images to be used
+      - image: circleci/openjdk:11.0.4-jdk-stretch-node-browsers
 
     working_directory: ~/repo
 
@@ -24,6 +18,13 @@ jobs:
     steps:
       - checkout
       - run: mkdir test-reports
+      - run: 
+          name: Sonar
+          command: mvn sonar:sonar 
+                    -Dsonar.projectKey=benweese_Java_Automation 
+                    -Dsonar.organization=benweese 
+                    -Dsonar.host.url=https://sonarcloud.io 
+                    -Dsonar.login=bdb3e7c2041eae34b8770faaa9e44d5408254278
       - run:
           name: Download Selenium
           command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
@@ -48,3 +49,13 @@ jobs:
 
       # run tests!
       - run: mvn clean test -Dtest=TestRunner.runner.java
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
+      - store_test_results:
+          path: ~/test-results
+      - store_artifacts:
+          path: ~/test-results/junit
