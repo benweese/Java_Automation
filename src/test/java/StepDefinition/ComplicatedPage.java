@@ -1,36 +1,35 @@
 package StepDefinition;
 
-import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-
+import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class complicatedPage {
+import static org.hamcrest.Matchers.anyOf;
+import static org.hamcrest.Matchers.is;
+
+public class ComplicatedPage {
 
     private WebDriver driver;
-    private complicatedPOM comPOM;
+    private ComplicatedPOM comPOM;
     private String url;
-    private setup setup = new setup();
+    private Setup setup = new Setup();
 
     @Before
     public void beforeScenario(){
-        //Calls setup to setup and get the driver needed
+        //Calls Setup to Setup and get the driver needed
         setup.setDriver();
         driver = setup.getDriver();
         //Sets up the page object model
-        comPOM  = new complicatedPOM(driver);
+        comPOM = new ComplicatedPOM(driver);
         //Takes the main link, Sets the page, then gets the new link and opens the browser with that URL
         setup.setUrl("complicated-page");
         url = setup.getUrl();
@@ -133,9 +132,9 @@ public class complicatedPage {
         for(String child : driver.getWindowHandles()){
             driver.switchTo().window(child);
         }
-        //String liURL = "https://www.linkedin.com/m/login/";
-        String liURL = "https://www.linkedin.com/cws/share/?url=https%3A%2F%2Fwww.ultimateqa.com%2Fcomplicated-page%2F";
-        Assert.assertEquals(liURL, driver.getCurrentUrl());
+        String liURL1 = "https://www.linkedin.com/m/login/";
+        String liURL2 = "https://www.linkedin.com/cws/share/?url=https%3A%2F%2Fwww.ultimateqa.com%2Fcomplicated-page%2F";
+        Assert.assertThat(driver.getCurrentUrl(), anyOf(is(liURL1), is(liURL2)));
         driver.quit();
     }
     //Tumblr Share Button
