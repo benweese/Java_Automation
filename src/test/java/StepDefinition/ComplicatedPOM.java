@@ -3,7 +3,7 @@ package StepDefinition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
- class complicatedPOM {
+class ComplicatedPOM {
     private WebDriver driver;
 
     //These are private arrays that has a getter and setter.
@@ -26,7 +26,7 @@ import org.openqa.selenium.WebDriver;
 
     By post = By.id("post-8807");
 
-    complicatedPOM(WebDriver driver){
+    ComplicatedPOM(WebDriver driver) {
         this.driver = driver;
     }
 
