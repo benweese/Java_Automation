@@ -1,10 +1,9 @@
 package APITesting;
 
+import io.restassured.http.ContentType;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
-import io.restassured.http.ContentType;
-
 import static org.hamcrest.Matchers.equalTo;
 
 
