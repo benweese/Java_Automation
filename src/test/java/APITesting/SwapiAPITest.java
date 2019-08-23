@@ -3,6 +3,8 @@ package APITesting;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import io.restassured.http.ContentType;
+
 import static org.hamcrest.Matchers.equalTo;
 
 
@@ -10,20 +12,23 @@ public class SwapiAPITest {
     private String url = "https://swapi.co/";
 
     private void episode_test(int ID, int episode, String title) {
-        given()
-                .baseUri(url)
-                .basePath("api/films/")
-                .pathParam("id", ID).
-                when().
+        given().
+                baseUri(url).
+                basePath("api/films/").
+                pathParam("id", ID).
+        when().
                 get("/{id}").
-                then().
+        then().
                 assertThat().
-                body("title", equalTo(title))
-                .and()
-                .assertThat().
-                body("episode_id", equalTo(episode))
-                .and()
-                .statusCode(200);
+                statusCode(200).
+        and().
+                assertThat().
+                body("episode_id", equalTo(episode)).
+        and().
+                assertThat().
+                body("title", equalTo(title)).
+        and().
+                assertThat().contentType(ContentType.JSON);
 
     }
 
