@@ -37,7 +37,11 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # run tests!
-      - run: mvn clean test -Dtest=TestRunner.Runner.java
+      - run:
+          name: Run Test
+          command: |
+            mvn clean test
+            mvn -Dtest=TestRunner.Runner.java test
       - run:
           name: Save test results
           command: |
