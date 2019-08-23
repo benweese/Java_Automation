@@ -36,12 +36,11 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
-      # run tests!
+      # run tests! mvn clean test
       - run:
           name: Run Test
           command: |
-            mvn clean test
-            mvn test -Dtest=TestRunner.Runner.java
+            mvn clean -Dtest=TestRunner.Runner.java test
       - run:
           name: Save test results
           command: |
