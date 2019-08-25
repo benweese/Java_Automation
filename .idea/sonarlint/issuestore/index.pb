@@ -40,3 +40,5 @@ T
 $src/test/java/TestRunner/Runner.java,d/b/db876b47a031ba7043be10057bda83bc091cb7c5
 a
 1src/test/java/StepDefinition/ComplicatedPage.java,7/7/7738c155403f5d5b5c1e6ea951bcb7c2218ea575
+Z
+*src/test/java/APITesting/SwapiAPITest.java,0/7/073d11e483991e48790dd308b5aef3dd46eb6ed0
