@@ -20,7 +20,7 @@ class Setup {
 
         //Sets the location of the chrome driver based on the repo as well as headless
         if (System.getProperty("user.dir").equalsIgnoreCase("/root/project")) {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/chromedriverLinux");
+            System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
             options.addArguments("--headless");
         }else {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/chromedriver");
