@@ -19,7 +19,7 @@ class Setup {
         options.addArguments("--disable-extensions");
 
         //Sets the location of the chrome driver based on the repo as well as headless
-        if(System.getProperty("user.dir").equalsIgnoreCase("/home/circleci/repo")){
+        if (System.getProperty("user.dir").equalsIgnoreCase("/root/project")) {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/resources/chromedriverLinux");
             options.addArguments("--headless");
         }else {

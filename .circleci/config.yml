@@ -2,15 +2,19 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the Images to be used
-      - image: circleci/openjdk:11.0.4-jdk-stretch-node-browsers
+      - image: docker:stable-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build the Docker image
+          command: docker build . --file Dockerfile
 
-    working_directory: ~/repo
-
-    environment:
-      # Customize the JVM maximum heap limit
-      MAVEN_OPTS: -Xmx3200m
-
+  test:
+    docker:
+      - image: benweese/java-automation
+        environment: # Customize the JVM maximum heap limit
+          MAVEN_OPTS: -Xmx3200m
     steps:
       - checkout
       - run: mkdir test-reports
@@ -52,3 +56,12 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
