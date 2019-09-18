@@ -1,7 +1,7 @@
 FROM alpine:latest
 LABEL maintainer="ben@benweese.dev"
 
-RUN apk update && apk add \
+RUN apk --no-cache && apk add \
     curl \
     git \
     vim \
