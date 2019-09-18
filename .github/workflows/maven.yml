@@ -3,6 +3,14 @@ name: Java CI
 on: [push]
 
 jobs:
+
+  build_container:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile
+      
   build:
 
     runs-on: macOS-10.14
